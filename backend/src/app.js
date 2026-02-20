@@ -12,7 +12,17 @@ const app = express();
 // Middleware
 app.use(timeout('20s'));
 
-const allowedOrigins = process.env.CORS_ORIGINS ? process.env.CORS_ORIGINS.split(',').map(origin => origin.trim()) : [];
+// Define allowed origins
+const allowedOrigins = [
+    'http://localhost:5173',
+    'https://user-directory-orpin.vercel.app',
+    'https://user-management-frontend-v1.vercel.app' // potential previous version
+];
+
+if (process.env.CORS_ORIGINS) {
+    const envOrigins = process.env.CORS_ORIGINS.split(',').map(origin => origin.trim());
+    allowedOrigins.push(...envOrigins);
+}
 
 app.use(cors({
     origin: function (origin, callback) {
