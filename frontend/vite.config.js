@@ -8,4 +8,18 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  server: {
+    proxy: {
+      '/api': {
+        target: 'https://user-directory-510a.onrender.com', // Updated to deployed backend
+        changeOrigin: true,
+        secure: false,
+      },
+      '/uploads': {
+        target: 'https://user-directory-510a.onrender.com',
+        changeOrigin: true,
+        secure: false,
+      },
+    },
+  },
 })

@@ -117,7 +117,7 @@ const ViewUser = () => {
                                 <div className="relative inline-block mb-8">
                                     <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-white shadow-2xl bg-slate-50 relative z-10">
                                         <img
-                                            src={user.profileImage?.startsWith('http') ? user.profileImage : `http://localhost:5000/uploads/${user.profileImage}`}
+                                            src={user.profileImage?.startsWith('http') ? user.profileImage : `https://user-directory-510a.onrender.com/uploads/${user.profileImage}`}
                                             alt={user.firstName}
                                             className="w-full h-full object-cover"
                                             onError={(e) => e.target.src = 'https://ui-avatars.com/api/?name=' + user.firstName + '+' + user.lastName + '&background=f3f4f6&color=4f46e5&bold=true&size=300'}

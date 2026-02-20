@@ -83,7 +83,7 @@ const DataTable = ({ users, onDelete, isLoading }) => {
                                 <div className="relative shrink-0">
                                     <div className="w-14 h-14 rounded-2xl overflow-hidden border-2 border-slate-50 shadow-sm group-hover:border-indigo-200 transition-all">
                                         <img
-                                            src={user.profileImage?.startsWith('http') ? user.profileImage : `http://localhost:5000/uploads/${user.profileImage}`}
+                                            src={user.profileImage?.startsWith('http') ? user.profileImage : `https://user-directory-510a.onrender.com/uploads/${user.profileImage}`}
                                             alt={user.firstName}
                                             className="w-full h-full object-cover"
                                             onError={(e) => e.target.src = 'https://ui-avatars.com/api/?name=' + user.firstName + '+' + user.lastName + '&background=f3f4f6&color=4f46e5&bold=true'}

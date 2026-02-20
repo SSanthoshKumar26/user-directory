@@ -26,7 +26,7 @@ const createUser = async (req, res, next) => {
     try {
         const userData = { ...req.body };
         if (req.file) {
-            userData.profileImage = req.file.filename;
+            userData.profileImage = req.file.path; // Cloudinary URL
         }
         const user = await userService.createUser(userData);
         res.status(201).json(user);
@@ -42,8 +42,9 @@ const updateUser = async (req, res, next) => {
     try {
         const userData = { ...req.body };
         if (req.file) {
-            userData.profileImage = req.file.filename;
+            userData.profileImage = req.file.path; // Cloudinary URL
         }
+
         const user = await userService.updateUser(req.params.id, userData);
         if (!user) {
             res.status(404);

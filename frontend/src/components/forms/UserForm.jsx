@@ -30,7 +30,7 @@ const UserForm = ({ onSubmit, initialData, isLoading }) => {
         if (initialData?.profileImage) {
             setPreview(initialData.profileImage.startsWith('http')
                 ? initialData.profileImage
-                : `http://localhost:5000/uploads/${initialData.profileImage}`
+                : `https://user-directory-510a.onrender.com/uploads/${initialData.profileImage}`
             );
         }
     }, [initialData]);
